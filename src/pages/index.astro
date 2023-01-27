@@ -3,12 +3,14 @@ import { Picture } from "@astrojs/image/components";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import image from "../images/Stortorget.jpg";
+
+export const prerender = true;
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
     <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<div class="image-wrapper">
+    <div class="image-wrapper">
       <Picture
         src={image}
         alt="Photo of Stortorget"
@@ -18,7 +20,7 @@ import image from "../images/Stortorget.jpg";
         widths={[200, 400, 800, 1600]}
         aspectRatio={4 / 3}
       />
-	  </div>
+    </div>
     <p class="instructions">
       To get started, open the directory <code>src/pages</code> in your project.<br
       />
@@ -60,9 +62,9 @@ import image from "../images/Stortorget.jpg";
     font-weight: 800;
     margin: 0;
   }
-	.image-wrapper {
-		overflow: hidden;
-	}
+  .image-wrapper {
+    overflow: hidden;
+  }
   .text-gradient {
     background-image: var(--accent-gradient);
     -webkit-background-clip: text;
